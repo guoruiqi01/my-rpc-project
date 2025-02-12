@@ -11,6 +11,9 @@ import com.grq.myrpc.serializer.Serializer;
 
 import java.io.IOException;
 
+/**
+ * 静态代理
+ */
 public class UserServiceProxy implements UserService {
     @Override
     public User getUser(User user) {
@@ -38,7 +41,6 @@ public class UserServiceProxy implements UserService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 }

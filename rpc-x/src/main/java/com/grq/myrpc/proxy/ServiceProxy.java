@@ -6,6 +6,7 @@ import com.grq.myrpc.model.RpcRequest;
 import com.grq.myrpc.model.RpcResponse;
 import com.grq.myrpc.serializer.JdkSerializer;
 import com.grq.myrpc.serializer.Serializer;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
@@ -14,6 +15,7 @@ import java.lang.reflect.Method;
 /**
  * 服务代理（JDK 动态代理）
  */
+@Slf4j
 public class ServiceProxy implements InvocationHandler {
 
     /**
@@ -34,6 +36,7 @@ public class ServiceProxy implements InvocationHandler {
                 .parameterTypes(method.getParameterTypes())
                 .args(args)
                 .build();
+        log.info("请求到达");
         try {
             // 序列化
             byte[] bodyBytes = serializer.serialize(rpcRequest);
