@@ -2,10 +2,11 @@ package com.grq.myrpc.proxy;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
+import com.grq.myrpc.RpcApplication;
 import com.grq.myrpc.model.RpcRequest;
 import com.grq.myrpc.model.RpcResponse;
-import com.grq.myrpc.serializer.JdkSerializer;
 import com.grq.myrpc.serializer.Serializer;
+import com.grq.myrpc.serializer.SerializerFactory;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -27,7 +28,8 @@ public class ServiceProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         // 指定序列化器
-        Serializer serializer = new JdkSerializer();
+        Serializer serializer = SerializerFactory
+                .getInstance(RpcApplication.getRpcConfig().getSerializer());
 
         // 构造请求
         RpcRequest rpcRequest = RpcRequest.builder()
@@ -36,7 +38,6 @@ public class ServiceProxy implements InvocationHandler {
                 .parameterTypes(method.getParameterTypes())
                 .args(args)
                 .build();
-        log.info("请求到达");
         try {
             // 序列化
             byte[] bodyBytes = serializer.serialize(rpcRequest);

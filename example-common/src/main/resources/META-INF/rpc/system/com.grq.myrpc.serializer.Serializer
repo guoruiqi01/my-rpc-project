@@ -1,0 +1,4 @@
+jdk=com.grq.myrpc.serializer.JdkSerializer
+json=com.grq.myrpc.serializer.JsonSerializer
+hessian=com.grq.myrpc.serializer.HessianSerializer
+kryo=com.grq.myrpc.serializer.KryoSerializer
