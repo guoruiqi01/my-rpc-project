@@ -63,4 +63,12 @@ public class RegistryTest {
         List<ServiceMetaInfo> serviceMetaInfoList = registry.serviceDiscovery(serviceKey);
         Assert.assertNotNull(serviceMetaInfoList);
     }
+
+    @Test
+    public void heartBeat() throws Exception {
+        // init()方法中执行的心跳检测
+        register();
+        // 阻塞一分钟
+        Thread.sleep(60 * 1000L);
+    }
 }
