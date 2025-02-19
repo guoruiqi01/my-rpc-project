@@ -13,7 +13,7 @@ public class RpcConfig {
     /**
      * 名称
      */
-    private String name = "yu-rpc";
+    private String name = "myrpc";
 
     /**
      * 版本号

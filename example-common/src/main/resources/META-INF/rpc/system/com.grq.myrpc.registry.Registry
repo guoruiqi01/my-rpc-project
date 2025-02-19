@@ -1,1 +1,2 @@
 etcd=com.grq.myrpc.registry.EtcdRegistry
+zookeeper=com.grq.myrpc.registry.ZookeeperRegistry
