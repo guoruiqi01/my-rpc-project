@@ -18,11 +18,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.grq</groupId>
-            <artifactId>rpc-x</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
         <!-- https://doc.hutool.cn/ -->
         <dependency>
             <groupId>cn.hutool</groupId>
