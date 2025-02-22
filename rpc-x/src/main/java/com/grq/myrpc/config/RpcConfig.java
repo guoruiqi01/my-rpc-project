@@ -1,5 +1,6 @@
 package com.grq.myrpc.config;
 
+import com.grq.myrpc.loadbalancer.LoadBalancerKeys;
 import com.grq.myrpc.serializer.Serializer;
 import com.grq.myrpc.serializer.SerializerKeys;
 import lombok.Data;
@@ -44,5 +45,10 @@ public class RpcConfig {
      * 注册中心配置
      */
     private RegistryConfig registryConfig = new RegistryConfig();
+
+    /**
+     * 负载均衡器
+     */
+    private String loadBalancer = LoadBalancerKeys.ROUND_ROBIN;
 
 }
