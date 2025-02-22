@@ -1,0 +1,2 @@
+no=com.grq.myrpc.fault.retry.NoRetryStrategy
+fixedInterval=com.grq.myrpc.fault.retry.FixedIntervalRetryStrategy

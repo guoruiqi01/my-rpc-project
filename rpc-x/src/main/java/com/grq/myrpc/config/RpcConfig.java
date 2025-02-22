@@ -1,5 +1,6 @@
 package com.grq.myrpc.config;
 
+import com.grq.myrpc.fault.retry.RetryStrategyKeys;
 import com.grq.myrpc.loadbalancer.LoadBalancerKeys;
 import com.grq.myrpc.serializer.Serializer;
 import com.grq.myrpc.serializer.SerializerKeys;
@@ -50,5 +51,10 @@ public class RpcConfig {
      * 负载均衡器
      */
     private String loadBalancer = LoadBalancerKeys.ROUND_ROBIN;
+
+    /**
+     * 重试策略
+     */
+    private String retryStrategy = RetryStrategyKeys.FIXED_INTERVAL;
 
 }
