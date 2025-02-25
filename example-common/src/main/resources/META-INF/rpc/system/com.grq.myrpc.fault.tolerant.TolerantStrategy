@@ -1,0 +1,4 @@
+failBack=com.grq.myrpc.fault.tolerant.FailBackTolerantStrategy
+failFast=com.grq.myrpc.fault.tolerant.FailFastTolerantStrategy
+failOver=com.grq.myrpc.fault.tolerant.FailOverTolerantStrategy
+failSafe=com.grq.myrpc.fault.tolerant.FailSafeTolerantStrategy

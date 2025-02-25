@@ -1,6 +1,8 @@
 package com.grq.myrpc.config;
 
 import com.grq.myrpc.fault.retry.RetryStrategyKeys;
+import com.grq.myrpc.fault.tolerant.TolerantStrategy;
+import com.grq.myrpc.fault.tolerant.TolerantStrategyKeys;
 import com.grq.myrpc.loadbalancer.LoadBalancerKeys;
 import com.grq.myrpc.serializer.Serializer;
 import com.grq.myrpc.serializer.SerializerKeys;
@@ -56,5 +58,10 @@ public class RpcConfig {
      * 重试策略
      */
     private String retryStrategy = RetryStrategyKeys.FIXED_INTERVAL;
+
+    /**
+     * 容错策略
+     */
+    private String toleranStrategy = TolerantStrategyKeys.FAIL_FAST;
 
 }
